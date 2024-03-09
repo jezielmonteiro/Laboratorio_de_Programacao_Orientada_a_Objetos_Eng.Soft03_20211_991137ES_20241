@@ -47,12 +47,14 @@ class Aluno:
         media = (self.nota01 + self.nota02) / 2
         return media
         
-        if media <= 4:
-            return "Reprovado"
-        if media >= 7:
-            return "Aprovado"
+    def getSituacao(self):
+        if self.getMedia() <= 4:
+            situacao = "Reprovado"
+        if self.getMedia() >= 7:
+            situacao = "Aprovado"
         else:
-            return "Prova Final"
+            situacao = "Prova Final"
+        return situacao
 
 aluno = Aluno()
 aluno.setNome("Jeziel")
@@ -69,3 +71,4 @@ print(aluno.getTelefone())
 print(aluno.getNota01())
 print(aluno.getNota02())
 print(aluno.getMedia())
+print(aluno.getSituacao())
