@@ -43,7 +43,7 @@ class Aluno:
     def getNota02(self):
         return self.nota02
     
-    def media(self):
+    def getMedia(self):
         media = (self.nota01 + self.nota02) / 2
         return media
         
@@ -68,4 +68,4 @@ print(aluno.getEndereco())
 print(aluno.getTelefone())
 print(aluno.getNota01())
 print(aluno.getNota02())
-print(aluno.media())
+print(aluno.getMedia())
