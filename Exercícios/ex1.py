@@ -56,7 +56,7 @@ class Aluno:
 
 aluno = Aluno()
 aluno.setNome("Jeziel")
-aluno.setMatricula(202313146)
+aluno.setMatricula(20240309)
 aluno.setEndereco("Rua de Programação Orientada a Objetos, 90")
 aluno.setTelefone("(24) 00000 - 0000")
 aluno.setNota01(7)
