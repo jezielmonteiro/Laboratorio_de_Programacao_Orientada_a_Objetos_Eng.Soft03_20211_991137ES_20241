@@ -57,6 +57,7 @@ class Aluno:
         return situacao
 
 aluno = Aluno()
+
 aluno.setNome("Jeziel")
 print(aluno.getNome())
 aluno.setMatricula(20240309)
