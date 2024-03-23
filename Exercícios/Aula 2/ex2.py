@@ -1,73 +1,95 @@
-#Classe ContaBancaria:
+#Classe Carro:
 
-#Atributos: titular, numero_conta, saldo, estado
-#Métodos: depositar, sacar
-#•	depositar(valor): adiciona o valor ao saldo da conta.
-#•	sacar(valor): subtrai o valor do saldo da conta, se houver saldo suficiente.
+#Atributos: marca, modelo, ano, cor, velocidade_atual
+#Métodos: acelerar, frear, ligar, desligar
+#•	acelerar(quantidade): aumenta a velocidade atual do carro pela quantidade especificada.
+#•	frear(quantidade): diminui a velocidade atual do carro pela quantidade especificada, sem deixar que a velocidade fique negativa.
+#•	ligar(): altera o estado do carro para ligado.
+#•	desligar(): altera o estado do carro para desligado e zera a velocidade atual.
 
 
-class ContaBancaria:
+class Carro:
     def __init__(self):
-        self.titular = ""
-        self.numero_conta = 0
-        self.saldo = 0.0
-        self.estado ="Ativa"
+        self.marca = ""
+        self.modelo = ""
+        self.ano = 0
+        self.cor = ""
+        self.velocidade = 0
+        self.estado = "Desligado"
     
-    def setTitular(self, titular):
-        self.titular = titular
+    def setMarca(self, marca):
+        self.marca = marca
     
-    def getTitular(self):
-        return self.titular
+    def getMarca(self):
+        return self.marca
     
-    def setNumeroConta(self, numero_conta):
-        self.numero_conta = numero_conta
+    def setModelo(self, modelo):
+        self.modelo = modelo
     
-    def getNumeroConta(self):
-        return self.numero_conta
+    def getModelo(self):
+        return self.modelo
     
-    def setSaldo(self, saldo):
-        if self.estado == "Ativa":
-            if saldo >= 0:
-                self.saldo = saldo
+    def setAno(self, ano):
+        self.ano = ano
     
-    def getSaldo(self):
-        return self.saldo
+    def getAno(self):
+        return self.ano
+    
+    def setCor(self, cor):
+        self.cor = cor
+    
+    def getCor(self):
+        return self.cor
+    
+    def setVelocidade(self, velocidade):
+        if self.estado == "Ligado":
+            if velocidade >= 0:
+                self.velocidade = velocidade
+    
+    def getVelocidade(self):
+        return self.velocidade
     
     def setEstado(self, estado):
-        if estado == "Ativa" or estado == "Inativa":
-            self.estado = estado
+        self.estado = estado
     
     def getEstado(self):
         return self.estado
     
-    def ativar(self):
-        self.estado = "Ativa"
+    def ligar(self):
+        self.estado = "Ligado"
+    
+    def desligar(self):
+        self.estado = "Desligado"
+        self.velocidade = 0
 
-    def inativar(self):
-        self.estado = "Inativa"
+    def acelerar(self, quantidade):
+        if self.estado == "Ligado":
+            self.velocidade += quantidade
 
-    def depositar(self, valor):
-        if self.estado == "Ativa":
-            if valor > 0:
-                self.saldo += valor
+    def frear(self, quantidade):
+        if self.estado == "Ligado":
+            self.velocidade -= quantidade
+            if self.velocidade < 0:
+                self.velocidade = 0
 
-    def sacar(self, valor):
-        if self.estado == "Ativa":
-            if valor > 0:
-                if valor <= self.saldo:
-                    self.saldo -= valor
+carro = Carro()
 
-conta = ContaBancaria()
-
-conta.ativar()
-conta.setTitular("Jeziel")
-print(conta.getTitular())
-conta.setNumeroConta(20240316)
-print(conta.getNumeroConta())
-conta.setSaldo(1000)
-print(conta.getSaldo())
-conta.depositar(500)
-print(conta.getSaldo())
-conta.sacar(50)
-print(conta.getSaldo())
-
+carro.setMarca("Nissan")
+print(carro.getMarca())
+carro.setModelo("180SX")
+print(carro.getModelo())
+carro.setAno(1988)
+print(carro.getAno())
+carro.setCor("Vermelho")
+print(carro.getCor())
+print(carro.getEstado())
+carro.ligar()
+print(carro.getEstado())
+carro.setVelocidade(190)
+print(carro.getVelocidade())
+carro.acelerar(30)
+print(carro.getVelocidade())
+carro.frear(20)
+print(carro.getVelocidade())
+carro.desligar()
+print(carro.getEstado())
