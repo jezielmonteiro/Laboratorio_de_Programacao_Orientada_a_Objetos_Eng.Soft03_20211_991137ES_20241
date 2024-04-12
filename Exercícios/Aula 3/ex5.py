@@ -49,7 +49,7 @@ class Produto:
 
     def aplicarDesconto(self, percentual):
         if percentual >= 0 and percentual <= 100:
-            self.preco = self.preco * ((100 - percentual) / 100)
+            self.preco = self.preco - (self.preco * (percentual / 100))
 
 produto = Produto()
 
