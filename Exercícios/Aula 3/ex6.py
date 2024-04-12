@@ -42,7 +42,7 @@ class Funcionario:
     
     def receberAumento(self, percentual):
         if percentual > 0:
-            self.salario = self.salario * (1 + (percentual / 100))
+            self.salario = self.salario * (self.salario * (percentual / 100))
 
     def mudarDepartamento(self, novo_departamento):
         self.departamento = novo_departamento
