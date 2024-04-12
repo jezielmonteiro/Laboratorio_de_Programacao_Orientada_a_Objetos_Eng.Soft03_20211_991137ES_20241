@@ -11,7 +11,6 @@ class Aluno():
         self.matricula = 0
         self.nota1 = 0.0
         self.nota2 = 0.0
-        self.media = 0.0
     
     def setNome(self, nome):
         self.nome = nome
