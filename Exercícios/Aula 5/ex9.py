@@ -30,7 +30,7 @@ class Funcionario:
         return self.salario
     
     def getBonus(self):
-        bonus = self.salario * 5/100
+        bonus = self.salario * 5 / 100
         return bonus
     
 class Gerente(Funcionario):
