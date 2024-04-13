@@ -27,7 +27,7 @@ class Produto:
         self.desconto = desconto
     
     def getDesconto(self):
-        self.preco = self.preco - (self.preco * self.desconto)
+        self.preco = self.preco - (self.preco * (self.desconto / 100))
         return self.preco
     
 class Livro(Produto):
@@ -60,7 +60,7 @@ livro.setPreco(200)
 print(livro.getPreco())
 livro.setAutor("Marco Antônio")
 print(livro.getAutor())
-livro.setDesconto(10 / 100)
+livro.setDesconto(10)
 print(livro.getDesconto())
 
 
@@ -72,5 +72,5 @@ eletronico.setPreco(3500)
 print(eletronico.getPreco())
 eletronico.setGarantia("3 anos")
 print(eletronico.getGarantia())
-eletronico.setDesconto(40 / 100)
+eletronico.setDesconto(40)
 print(eletronico.getDesconto())
